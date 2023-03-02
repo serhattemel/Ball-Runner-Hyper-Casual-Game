@@ -8,51 +8,25 @@ using UnityEngine.UI;
 
 public class GPGSManager : MonoBehaviour
 {
-    private PlayGamesClientConfiguration clientConfiguration;
-    public Text statusTxt;
-    public Text descriptionTxt;
-
-    private void Start()
+    public void buttonLogin()
     {
-        ConfigureGPGS();
-        SignIntoGPGS(SignInInteractivity.CanPromptOnce, clientConfiguration);
+        PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
     }
-    public void ConfigureGPGS()
+    public void Start()
     {
-        clientConfiguration = new PlayGamesClientConfiguration.Builder().Build();
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
-         void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
+    internal void ProcessAuthentication(SignInStatus status)
     {
-        configuration = clientConfiguration;
-        PlayGamesPlatform.InitializeInstance(configuration);
-        PlayGamesPlatform.Activate();
-
-        PlayGamesPlatform.Instance.Authenticate(interactivity, (code) =>
+        if (status == SignInStatus.Success)
         {
-            statusTxt.text = "Authenticating...";
-            if (code == SignInStatus.Success)
-            {
-                statusTxt.text = "Successfully";
-                descriptionTxt.text = Social.localUser.userName + "\n" + Social.localUser.id;
-            }
-            else
-            {
-                statusTxt.text = "Failed";
-                descriptionTxt.text ="Failed to Auth, reason for failure is " + code;
-            }
-        });
-            
-    }
-
-    public void BasicSignInBtn()
-    {
-        SignIntoGPGS(SignInInteractivity.CanPromptAlways, clientConfiguration);
-    }
-
-    public void SignOutBtn()
-    {
-        PlayGamesPlatform.Instance.SignOut();
-        statusTxt.text = "Signed Out";
-        
+            // Continue with Play Games Services
+        }
+        else
+        {
+            // Disable your integration with Play Games Services or show a login button
+            // to ask users to sign-in. Clicking it should call
+            // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
+        }
     }
 }

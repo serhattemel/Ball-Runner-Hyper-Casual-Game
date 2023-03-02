@@ -1557,7 +1557,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1240706563}
         m_TargetAssemblyTypeName: GPGSManager, Assembly-CSharp
-        m_MethodName: BasicSignInBtn
+        m_MethodName: buttonLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1794,8 +1794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121890bebacf77847bc84a79f81530af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusTxt: {fileID: 346886645}
-  descriptionTxt: {fileID: 1463632701}
 --- !u!1 &242506560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5552,8 +5550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121890bebacf77847bc84a79f81530af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusTxt: {fileID: 346886645}
-  descriptionTxt: {fileID: 1463632701}
 --- !u!114 &1240706564
 MonoBehaviour:
   m_ObjectHideFlags: 0

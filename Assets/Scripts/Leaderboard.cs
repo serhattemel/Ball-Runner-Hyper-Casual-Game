@@ -11,7 +11,7 @@ public class Leaderboard : MonoBehaviour
 {
     public void ShowLeaderboardUI()
     {
-        Social.ShowLeaderboardUI();
+        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_leaderboard);
     }
     
     public void DoLeaderboardPost(int _score)
