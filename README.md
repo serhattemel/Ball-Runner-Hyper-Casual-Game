@@ -1,4 +1,7 @@
 # Ball-Runner-Hyper-Casual-Game
+
+https://play.google.com/store/apps/details?id=com.SerhatTemel.BallRunner
+
  Platform game where you overcome the barricades that come your way
  
 ![logo 512](https://user-images.githubusercontent.com/53862681/221854041-6bcbe23a-b206-4e93-a632-9a0a1d60f953.png)
